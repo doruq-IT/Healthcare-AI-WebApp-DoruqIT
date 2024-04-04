@@ -39,5 +39,5 @@ git clone [https://github.com/doruq-IT/Healthcare-AI-WebApp-DoruqIT]
 ## Contribution
 We welcome contributions from the community! Whether it's adding new features, enhancing existing ones, or reporting bugs, your input is invaluable. Please refer to our CONTRIBUTING.md for guidelines on how to contribute effectively.
 
-## Contactokan
+## Contact okan
 Got questions or suggestions? Reach out to us via GitHub or connect with [https://github.com/doruq-IT]("Okan"), the lead developer, on LinkedIn for more information.
