@@ -13,7 +13,7 @@ Engage with an intuitive Q&A interface where users can ask health-related questi
 ### User-Friendly Interface: 
 Experience a sleek, responsive design that ensures easy navigation across different sections - Home, Service, Models, and Contact - allowing for a hassle-free user journey.
 
-###Accessibility and Inclusivity: 
+### Accessibility and Inclusivity: 
 Aimed at bridging healthcare gaps, our application extends its reach to remote and underserved communities, ensuring vital health services are accessible to all.
 
 ## Technologies
