@@ -1,0 +1,112 @@
+{% extends "disease_page.html" %}
+{% block page %}
+<br>
+<br>
+<br>
+<div id="disease_page">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-sm-6 wow fadeInLeft" data-wow-delay="0.5s">
+						<h3>Liver Health Analysis</h3>
+						<h4>Overview</h4>
+						<p>	The liver, roughly the size of a football, is located beneath your 
+							ribcage on the right side of your abdomen. This organ plays a crucial 
+							role in processing what you eat and eliminating harmful substances 
+							from your body. Genetic factors can lead to liver disease, meaning it 
+							can be inherited. Additionally, the liver can be harmed by various 
+							external elements, including viral infections, excessive alcohol 
+							consumption, and obesity. Persistent damage to the liver may cause 
+							scarring, known as cirrhosis, which can progress to liver failure, 
+							a potentially fatal condition. However, early intervention can allow 
+							the liver to recover.
+						</p>
+						
+					</div>
+					
+					<div class="col-md-6 col-sm-6 wow fadeInRight" data-wow-delay="0.5s">
+						<img class="ill_image" src="./static/images/disease_img/theliver1.jpg">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 col-sm-6 wow fadeInRight" data-wow-delay="0.5s">
+						<h4>Symptoms</h4>
+						<p>It's important to note that liver disease may not always manifest with 
+							clear symptoms. However, when symptoms do present, they can include:
+						</p>
+					    <ul>
+							<li>Jaundice, which is a yellowing of the skin and eyes</li>
+							<li>Pain and swelling in the abdominal area</li>
+							<li>Swelling in the legs and ankles</li>
+							<li>An itchy sensation on the skin</li>
+							<li>Urine of a darker color than usual</li>
+							<li>Light-colored stool</li>
+							<li>Persistent tiredness and a reduced appetite</li>
+							<li>Feelings of nausea or instances of vomiting</li>
+					    </ul>
+					</div>
+				</div>
+				
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-sm-6 wow fadeInRight" style="display: inline-block;vertical-align: middle;"  data-wow-delay="0.5s">
+						<h3>Model</h3>
+						<p>To make the diagnosis you need to enter the following informations :</p>
+						<ul>
+							<li>Age: age of the patient</li>
+							<li>Gender: Male, Female or Other</li>
+							<li>Total Bilirubin: result of blood test that measures the amount of a substance called bilirubin</li>
+							<li>Direct Bilirubin: result of blood test that measures the amount of direct bilirubin</li>
+							<li>Alkaline Phosphotase: result of blood test to measures the amount of an enzyme called alkaline phosphotase</li>
+							<li>Alanine Aminotransferase: result of test to measure the amount of an enzyme called alanine aminotransferase</li>
+							<li>Aspartate Aminotransferase: result of test to measure the amount of the enzyme aspartate aminotransferase</li>
+							<li>Total Protiens: A total protein test measures the sum of all types of proteins in the blood</li>
+ 							<li>Albumin: Result of albumin blood test that measures the amount of albumin in your blood. Albumin is a protein made by your liver</li>
+ 							<li>Albumin and Globulin Ratio: result of a test that compares the concentrations of albumin and globulin in the blood</li>
+
+						</ul>
+					</div>
+					
+				<div class="col-md-6 col-sm-6  wow fadeInRight" data-wow-delay="0.5s">
+					<div class="flex-wrapper">
+					  <div class="single-chart">
+					    <svg viewBox="0 0 36 36" class="circular-chart orange">
+					      <path class="circle-bg"
+					        d="M18 2.0845
+					          a 15.9155 15.9155 0 0 1 0 31.831
+					          a 15.9155 15.9155 0 0 1 0 -31.831"
+					      />
+					      <path class="circle"
+					        stroke-dasharray="86, 100"
+					        d="M18 2.0845
+					          a 15.9155 15.9155 0 0 1 0 31.831
+					          a 15.9155 15.9155 0 0 1 0 -31.831"
+					      />
+					      <text x="18" y="20.35" class="percentage">84%</text>
+					    </svg>
+					    <h4 style="text-align: center;">Accuracy</h4>
+					  </div>
+					  </div>
+					</div>
+				</div>
+						
+				</div>
+			</div>
+			<br>
+			<br>
+			<br>
+			<div class="prediction text-center">
+			    <a href="/liver_form" class="smoothScroll btn btn-success wow fadeInDown" data-wow-delay="2000">Predict Risk</a>
+		  	</div>
+			<br>
+		  	<br>
+		  	<br>
+		  	<br>
+
+		</div>
+		
+
+{% endblock %}
+
+
+

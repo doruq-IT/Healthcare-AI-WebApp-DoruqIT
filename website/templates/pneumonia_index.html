@@ -1,0 +1,99 @@
+{% extends "disease_page.html" %}
+{% block page %}
+<br>
+<br>
+<br>
+<div id="disease_page">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-sm-6 wow fadeInLeft" data-wow-delay="0.5s">
+						<h3>Pneumonia Risk Assessment</h3>
+						<h4>Overview</h4>
+						<p>Pneumonia is a respiratory condition where the lungs' air sacs become 
+							inflamed due to an infection. This inflammation can lead to the air sacs being filled with fluid or pus, resulting in symptoms like a phlegm-filled cough, fever, chills, and breathing difficulties. The infection can be caused by various pathogens, including bacteria, viruses, and fungi.
+							The severity of pneumonia can vary greatly, from being a mild illness to a potentially life-threatening condition. It poses a higher risk for certain groups, particularly babies and young children, individuals over 65, and those with existing health issues or compromised immune systems.
+						</p>
+						
+					</div>
+					
+					<div class="col-md-6 col-sm-6 wow fadeInRight" data-wow-delay="0.5s">
+						<img class="ill_image" src="./static/images/disease_img/thepneumonia1.jpg">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 col-sm-6 wow fadeInRight" data-wow-delay="0.5s">
+						<h4>Symptoms</h4>
+						<p>The symptoms of pneumonia can range from mild to severe and may vary based on the infecting organism, as well as the patient's age and health status. Often, the initial symptoms can resemble those of a common cold or flu but tend to persist for a longer duration.
+						Common symptoms of pneumonia include:
+						</p>
+					    <ul>
+							<li>Pain in the chest during breathing or coughing</li>
+							<li>Difficulty in breathing or shortness of breath</li>
+							<li>In older adults (65+), confusion or alterations in mental clarity</li>
+							<li>Fever accompanied by sweating and severe chills</li>
+							<li>A body temperature that's lower than normal, particularly in older adults and those with weakened immune systems</li>
+							<li>General fatigue or tiredness</li>
+							<li>Symptoms like nausea, vomiting, or diarrhea</li>
+		      
+		   				 </ul>
+					</div>
+				</div>
+				
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-sm-6 wow fadeInRight" style="display: inline-block;vertical-align: middle;" data-wow-delay="0.5s">
+						<h3>Model</h3>
+						<p>For the diagnosis, please upload a chest X-ray image.</p>
+						<p>The system will indicate 'NORMAL' if there are no indications of pneumonia, and 'PNEUMONIA' if symptoms of the disease are detected.</p>
+						</ul>
+					</div>
+					<div class="col-md-6 col-sm-6  wow fadeInRight" data-wow-delay="0.5s">
+						<div class="flex-wrapper" style="padding-top: 60px;">
+						  <div class="single-chart">
+						    <svg viewBox="0 0 36 36" class="circular-chart orange">
+						      <path class="circle-bg"
+						        d="M18 2.0845
+						          a 15.9155 15.9155 0 0 1 0 31.831
+						          a 15.9155 15.9155 0 0 1 0 -31.831"
+						      />
+						      <path class="circle"
+						        stroke-dasharray="86, 100"
+						        d="M18 2.0845
+						          a 15.9155 15.9155 0 0 1 0 31.831
+						          a 15.9155 15.9155 0 0 1 0 -31.831"
+						      />
+						      <text x="18" y="20.35" class="percentage">94%</text>
+						    </svg>
+						    <h4 style="text-align: center;">Accuracy</h4>
+						  </div>
+						</div>
+					</div>
+						
+					</div>
+					
+			
+					
+				</div>
+			</div>
+			<br>
+			<br>
+			<br>
+			<div class="prediction text-center">
+			    <a href="/pneumonia_form" class="smoothScroll btn btn-success wow fadeInDown" data-wow-delay="2000">Predict Risk</a>
+		  	</div>
+		
+		  	<br>
+			<br>
+			<br>
+			<br>
+		</div>
+		
+
+{% endblock %}
+
+
+
+
+
+

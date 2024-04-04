@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container" style="max-width: 540px; margin: 50px auto; background: #f9f9f9; padding: 2rem; border-radius: 20px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);">
+    <div style="text-align: center; margin-bottom: 2rem;">
+        <img src="{{ url_for('static', filename='images/login.png') }}" class="fluid-img" alt="login icon" style="width: 80px; height: 80px; border-radius: 50%; padding: 10px; background: #e7e7e7;"/>
+    </div>
+    <h2 style="text-align: center; color: #4a4a4a; margin-bottom: 2rem; font-size: 1.75rem;">Login</h2>
+    <form action="{{ url_for('auth.login') }}" method="post">
+        <div class="form-group" style="margin-bottom: 1.5rem;">
+            <input type="email" id="email" name="email" required class="form-control" placeholder="Email" style="width: 100%; padding: 1rem; border: 1px solid #ddd; border-radius: 20px; box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);">
+        </div>
+        <div class="form-group" style="margin-bottom: 1.5rem;">
+            <input type="password" id="password" name="password" required class="form-control" placeholder="Password" style="width: 100%; padding: 1rem; border: 1px solid #ddd; border-radius: 20px; box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);">
+        </div>
+        <div>
+            <button type="submit" style="width: 100%; padding: 1rem; background-color: #4CAF50; border: none; border-radius: 20px; color: white; font-weight: bold; cursor: pointer; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#3e8e41'" onmouseout="this.style.backgroundColor='#4CAF50'">Login</button>
+        </div>
+    </form>
+    <p style="text-align: center; margin-top: 2rem;">Don't have an account? <a href="{{ url_for('auth.signup') }}" style="font-weight: bold; color: #4CAF50;">Sign up here</a></p>
+</div>
+{% endblock %}

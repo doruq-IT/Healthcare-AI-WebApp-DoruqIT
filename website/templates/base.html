@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>DoruqHealthSystem</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+	<!-- animate -->
+	<link rel="stylesheet" href="./static/css/animate.min.css">
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="./static/css/bootstrap.min.css">
+	<!-- magnific pop up -->
+	<link rel="stylesheet" href="./static/css/magnific-popup.css">
+	<!-- font-awesome -->
+	<link rel="stylesheet" href="./static/css/font-awesome.min.css">
+	<!-- google font -->
+	<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700,800' rel='stylesheet' type='text/css'>
+	<!-- custom -->
+	<link rel="stylesheet" href="./static/css/style.css">
+
+
+</head>
+{% block content %}
+<body data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
+	<!-- start navigation -->
+	<div class="navbar navbar-fixed-top navbar-default" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon icon-bar"></span>
+					<span class="icon icon-bar"></span>
+					<span class="icon icon-bar"></span>
+				</button>
+				<a href="/" class="navbar-brand">
+					<img src="./static/images/doruqit_logo.png" class="img-responsive" alt="logo">
+				</a>
+			</div>
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/" class="smoothScroll">HOME</a></li>
+					<li><a href="#service" class="smoothScroll">SERVICE</a></li>
+					<li><a href="#portfolio" class="smoothScroll">MODELS</a></li>
+					<li><a href="#contact" class="smoothScroll">CONTACT</a></li>
+					<!-- Login link and icon -->
+
+				{% if current_user.is_authenticated %}
+					<li>
+						<a href="#" style="font-weight: bold; color: #93ca3a; font-size: 18px;">
+							Hi, {{ current_user.name.capitalize() }}
+						</a>
+					</li>
+					<li>
+						<a href="{{ url_for('auth.logout') }}" style="font-size: 16px; color: #EA5455;">
+							<i class="fa fa-sign-out"></i> SIGN OUT
+						</a>
+					</li>
+				{% else %}
+					<li><a href="{{ url_for('auth.login') }}" class="login-link">LOGIN
+						<i class="fa fa-sign-in"></i>
+					</a></li>
+					
+					<li><a href="{{ url_for('auth.signup') }}" class="signup-link">SIGN UP
+						<i class="fa fa-user-plus"></i>
+					</a></li>
+				{% endif %}
+				</ul>
+			
+		</div>
+	</div></div>
+	<!-- end navigation -->
+
+	<!-- start home -->
+	<section id="home" class="text-center">
+		<div class="templatemo_headerimage">
+			<div class="flexslider">
+				<ul class="slides">
+					<li>
+						<img src="./static/images/home.jpg" alt="">
+						<div class="slider-caption">
+							<div class="templatemo_homewrapper">
+								<h1 class="wow fadeInDown" data-wow-delay="2000">AI: Revolutionizing the Future of Healthcare</h1>
+								<h2 class="wow fadeInDown" data-wow-delay="2000">
+									<span>Uniting Efforts to Transform the Vast World of Healthcare</span>
+								</h2>
+								<a href="#service" class="smoothScroll btn btn-default wow fadeInDown"
+									data-wow-delay="2000">Our Expertise</a>
+							</div>
+						</div>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+	</section>
+	<!-- end home -->
+	
+	<!-- start qa-section -->
+	<section id="qa-section">
+		<div class="container">
+			<h2 style="font-weight: bold;">Get Medical Insights</h2>
+			<form id="qa-form">
+				<input type="text" id="question-input" placeholder="Write Your Health Question Here!..." required>
+				<button type="submit">Ask</button>
+			</form>
+			<p id="answer"></p>
+		</div>
+	</section>
+	<!-- end qa-section -->
+
+	<div id="chatbot-icon-container" onclick="scrollToChat()">
+		<i class="fa fa-comments-o fa-3x" id="chatbot-icon" aria-hidden="true"></i>
+		<span class="chatbot-helper-text">Ask me anything!</span>
+  	</div>
+	<!-- Chatbot İkonu End-->
+	<!-- Modal -->
+	<div id="popup" class="popup" style="display:none;">
+		<div class="popup-content">
+			<span class="popup-close-btn" id="close-popup">&times;</span>
+			<p>It is recommended to consult a specialist for the exact answer. For more information, please visit our contact section.</p>
+			<button class="popup-ok-btn" id="close-popup">OK</button>
+		</div>
+	</div>
+	<!-- End Modal -->
+	<!-- start service -->
+	<div id="service">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<h2 class="wow bounce">Our Expertise</h2>
+				</div>
+			</div>
+			<br>
+			<hr>
+			<div class="row">
+				<div class="col-md-4 col-sm-4">
+					<div class="media">
+						<div class="media-object media-left wow fadeIn" data-wow-delay="0.1s">
+							<i class="fa fa-globe" aria-hidden="true"></i>
+						</div>
+						<div class="media-body wow fadeIn">
+							<h3 class="media-heading"> Enhanced Reach</h3>
+							<p>Leveraging AI, we extend vital healthcare services to 
+								remote and underserved regions, bridging the gap 
+								in healthcare accessibility</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4">
+					<div class="media">
+						<div class="media-object media-left wow fadeIn" data-wow-delay="0.3s">
+							<i class="fa fa-cog"></i>
+						</div>
+						<div class="media-body wow fadeIn">
+							<h3 class="media-heading">Proactive Detection</h3>
+							<p>Our AI-driven approach aids in identifying illnesses at their inception, 
+								significantly improving recovery prospects.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4">
+					<div class="media">
+						<div class="media-object media-left wow fadeIn" data-wow-delay="0.6s">
+							<i class="fa fa-usd" aria-hidden="true"></i>
+						</div>
+						<div class="media-body wow fadeIn" data-wow-delay="0.3s">
+							<h3 class="media-heading">Cost Efficiency</h3>
+							<p>AI streamlines medical operations, reducing the need for extensive human 
+								intervention and costly medical procedures.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 col-sm-4">
+					<div class="media">
+						<div class="media-object media-left wow fadeIn" data-wow-delay="0.9s">
+							<i class="fa fa-heartbeat" aria-hidden="true"></i>
+						</div>
+						<div class="media-body wow fadeIn" data-wow-delay="0.6s">
+							<h3 class="media-heading">Precision at Its Best</h3>
+							<p>Employing cutting-edge machine learning techniques, we guarantee exceptionally 
+								precise predictions and analyses</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4">
+					<div class="media">
+						<div class="media-object media-left wow fadeIn" data-wow-delay="0.4s">
+							<i class="fa fa-medkit" aria-hidden="true"></i>
+						</div>
+						<div class="media-body wow fadeIn" data-wow-delay="0.3s">
+							<h3 class="media-heading">Rapid Results</h3>
+							<p>Utilizing our innovative app, patients can swiftly receive diagnoses by simply 
+								inputting minimal personal data</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4">
+					<div class="media">
+						<div class="media-object media-left wow fadeIn" data-wow-delay="0.8s">
+							<i class="fa fa-check-circle"></i>
+						</div>
+						<div class="media-body wow fadeIn" data-wow-delay="0.6s">
+							<h3 class="media-heading">Error-Free Healthcare</h3>
+							<p>Integrating AI in medical processes minimizes human involvement, thereby 
+								substantially reducing the likelihood of errors in medical treatments.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end service -->
+
+
+	<!-- start portfolio -->
+	<div id="portfolio">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<h2 class="wow bounce">Our prediction models</h2>
+					<h6 class="model-info">Hover over the portfolios and click on the search icons to navigate to the prediction pages for each health condition. For more predictive models on other conditions, feel free to reach out via the <a href="#contact">contact section</a>.</h6>
+					<div class="iso-section wow fadeIn" data-wow-delay="0.6s">
+
+						<div class="iso-box-section">
+							<div class="iso-box-wrapper col4-iso-box portfolio-container">
+
+								<div class="iso-box graphic photoshop wallpaper col-md-4 col-sm-6 col-xs-12">
+									<div class="portfolio-thumb">
+										<img src="./static/images/model_img/liver.jpg" class="fluid-img"
+											alt="portfolio img">
+										<div class="portfolio-overlay">
+											<a href="/liver" class="fa fa-search"></a>
+											<h4>Liver Health Analysis</h4>
+											<p>Evaluate your risk of developing chronic liver conditions.</p>
+										</div>
+									</div>
+								</div>
+
+								<div class="iso-box graphic wallpaper col-md-4 col-sm-6 col-xs-12">
+									<div class="portfolio-thumb">
+										<img src="./static/images/model_img/pneumonia.jpg" class="fluid-img"
+											alt="portfolio img">
+										<div class="portfolio-overlay">
+
+											<a href="/pneumonia" class="fa fa-search"></a>
+											<h4>Pneumonia Risk Assessment</h4>
+											<p>Assess your likelihood of contracting pneumonia</p>
+										</div>
+									</div>
+								</div>
+
+								<div class="iso-box wallpaper col-md-4 col-sm-6 col-xs-12">
+									<div class="portfolio-thumb">
+										<img src="./static/images/model_img/kidney.jpg" class="fluid-img"
+											alt="portfolio img">
+										<div class="portfolio-overlay">
+
+											<a href="/kidney" class="fa fa-search"></a>
+											<h4>Kidney Health Evaluation</h4>
+											<p>Determine your risk of developing chronic kidney disease</p>
+										</div>
+									</div>
+								</div>
+
+								<div class="iso-box graphic col-md-4 col-sm-6 col-xs-12">
+									<div class="portfolio-thumb">
+										<img src="./static/images/model_img/diabete.jpg" class="fluid-img"
+											alt="portfolio img">
+										<div class="portfolio-overlay">
+
+
+											<a href="/diabete" class="fa fa-search"></a>
+											<h4>Diabetes Risk Analysis</h4>
+											<p>Evaluate your likelihood of developing diabetes</p>
+										</div>
+									</div>
+								</div>
+
+								<div class="iso-box wallpaper col-md-4 col-sm-6 col-xs-12">
+									<div class="portfolio-thumb">
+										<img src="./static/images/model_img/stroke.jpg" class="fluid-img"
+											alt="portfolio img">
+										<div class="portfolio-overlay">
+
+
+											<a href="/stroke" class="fa fa-search"></a>
+											<h4>Stroke Risk Assessment</h4>
+											<p>Assess your probability of experiencing a stroke</p>
+										</div>
+									</div>
+								</div>
+
+								<div class="iso-box graphic photoshop col-md-4 col-sm-6 col-xs-12">
+									<div class="portfolio-thumb">
+										<img src="./static/images/model_img/heart.jpg" class="fluid-img"
+											alt="portfolio img">
+										<div class="portfolio-overlay">
+
+											<a href="/heart" class="fa fa-search"></a>
+											<h4>Heart Health Evaluation</h4>
+											<p>Determine your risk of developing heart disease</p>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end portfolio -->
+
+	<!-- start contact -->
+	<div id="contact">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 col-sm-4 wow fadeInLeft" data-wow-delay="0.6s">
+					<h2>
+						<img src="./static/images/doruqit.png" class="img-responsive logo" alt="DoruqIT Logo" style="float: left; margin-right: 10px;">
+						<strong>DoruqIT</strong>
+					</h2>
+					<p>Feel free to contact me on github or linkedin for any questions.</p>
+					<a href="https://github.com/doruq-IT" class="fa fa-github fa-2x"></a>
+					<a href="https://www.linkedin.com/in/okan-k-224646138/" class="fa fa-linkedin-square fa-2x"></a>
+
+				</div>
+				<div class="col-md-3 col-sm-4 wow fadeIn" data-wow-delay="0.9s">
+					<address>
+						<h3>Contact us</h3>
+						<p><a href="mailto:okan.rescue@gmail.com" class="fa fa-envelope-o too-icon"></a> okan.rescue@gmail.com</p>
+					</address>
+				</div>
+				<form action="{{ url_for('messages.msg') }}" method="POST" class="col-md-6 col-sm-4" id="contact-form"
+					role="form">
+					<div class="col-md-6 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
+						<input name="name" type="text" class="form-control" id="name" placeholder="Name-Surname" required>
+					</div>
+					<div class="col-md-6 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
+						<input name="email" type="email" class="form-control" id="email" placeholder="Email" required>
+					</div>
+					<div class="col-md-12 col-sm-12 wow fadeIn" data-wow-delay="0.9s">
+						<textarea name="message" rows="5" class="form-control" id="message" placeholder="Message"
+							required></textarea>
+					</div>
+					<div class="col-md-offset-9 col-md-3 col-sm-6 wow fadeIn" data-wow-delay="0.3s">
+						<input name="submit" type="submit" class="form-control" id="submit" value="Send">
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-- Footer Ekleme -->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 wow fadeIn" data-wow-delay="0.3s">
+					<footer>
+						<p>&copy; <script>document.write(new Date().getFullYear())</script> DoruqIT. All rights reserved.</p>
+					</footer>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end contact -->
+
+	{% endblock %}  
+
+
+	<!-- jQuery -->
+	<script src="./static/js/jquery.js"></script>
+	<!-- bootstrap -->
+	<script src="./static/js/bootstrap.min.js"></script>
+	<!-- isotope -->
+	<script src="./static/js/isotope.js"></script>
+	<!-- images loaded -->
+	<script src="./static/js/imagesloaded.min.js"></script>
+	<!-- wow -->
+	<script src="./static/js/wow.min.js"></script>
+	<!-- smoothScroll -->
+	<script src="./static/js/smoothscroll.js"></script>
+	<!-- jquery flexslider -->
+	<script src="./static/js/jquery.flexslider.js"></script>
+	<!-- Magnific Pop up -->
+	<script src="./static/js/jquery.magnific-popup.min.js"></script>
+	<!-- custom -->
+	<script src="./static/js/custom.js"></script>
+
+	<script>
+		document.getElementById('qa-form').addEventListener('submit', function(e) {
+			e.preventDefault();
+			var question = document.getElementById('question-input').value;
+			fetch('/get_answer', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({ question: question })
+			})
+			.then(response => response.json())
+			.then(data => {
+				document.getElementById('answer').textContent = data.answer;
+			})
+			.catch(error => console.error('Error:', error));
+		});
+		
+	</script>
+	<script>
+		var modal = document.getElementById('popup');
+
+		var closeButton = document.getElementById('close-popup');
+
+		document.getElementById('qa-form').addEventListener('submit', function(e) {
+			e.preventDefault();
+			modal.style.display = 'flex'; 
+
+			modal.style.display = 'flex';
+		});
+
+	
+		closeButton.onclick = function() {
+			modal.style.display = 'none';
+		}
+
+		window.onclick = function(event) {
+			if (event.target == modal) {
+				modal.style.display = 'none';
+			}
+		}
+
+		
+		document.querySelector('.popup-ok-btn').addEventListener('click', function() {
+			modal.style.display = 'none';
+		});
+	</script>
+
+	<script>
+	
+		function scrollToChat() {
+			document.getElementById('qa-section').scrollIntoView({
+				behavior: 'smooth'
+			});
+		}
+	
+	
+		setInterval(function(){
+			var helperText = document.querySelector('.chatbot-helper-text');
+			helperText.textContent = "Can I help you?";
+			helperText.style.visibility = 'visible'; 
+			helperText.style.opacity = '1'; 
+		}, 10000); 
+	
+	
+		var chatIcon = document.getElementById('chatbot-icon');
+		chatIcon.addEventListener('mouseenter', function() {
+			var helperText = document.querySelector('.chatbot-helper-text');
+			helperText.textContent = "Click for Medical Insights! Ask in chat.";
+			helperText.style.visibility = 'visible'; 
+			helperText.style.opacity = '1'; 
+			helperText.style.position = 'absolute'; 
+			helperText.style.bottom = '50px'; 
+			helperText.style.left = '50%'; 
+			helperText.style.transform = 'translateX(-50%)'; 
+			helperText.classList.add('visible');
+		});
+	</script>
+	
+	<script>
+		window.onload = function() {
+		
+		var predictionLinks = document.querySelectorAll('.portfolio-overlay a');
+		
+		
+		var isAuthenticated = {{ 'true' if current_user.is_authenticated else 'false' }};
+		
+		
+		predictionLinks.forEach(function(link) {
+			link.addEventListener('click', function(event) {
+			if (!isAuthenticated) {
+				event.preventDefault();
+		
+				alert('You must be signed in to access the prediction models. Please sign up or log in to continue.');
+			}
+			
+			});
+		});
+		};
+	</script>
+		
+	
+</body>
+
+</html>

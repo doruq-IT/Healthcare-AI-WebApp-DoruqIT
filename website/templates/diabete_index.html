@@ -1,0 +1,117 @@
+{% extends "disease_page.html" %}
+{% block page %}
+<br>
+<br>
+<br>
+<div id="disease_page">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-sm-6 wow fadeInLeft" data-wow-delay="0.5s">
+						<h3>Diabetes Risk Analysis</h3>
+						<h4>Overview</h4>
+						<p>	Diabetes mellitus encompasses a variety of diseases that impact the 
+							way your body processes blood sugar (glucose), 
+							which is crucial for health. Glucose serves as a key energy source 
+							for muscle and tissue cells and is the primary fuel for the brain. The 
+							root causes of diabetes differ depending on its type. 
+							Regardless of the type, diabetes results in elevated blood sugar 
+							levels, which can pose significant health risks if not managed properly.
+							Chronic forms of diabetes include type 1 and type 2 diabetes. 
+							There are also forms of diabetes that are potentially reversible, 
+							such as prediabetes and gestational diabetes. Prediabetes is a 
+							condition where blood sugar levels are above normal but not high 
+							enough to be deemed diabetes, and it can often lead to diabetes if 
+							no preventive steps are taken. Gestational diabetes occurs during 
+							pregnancy and typically resolves after childbirth.	
+						</p>
+					</div>
+					
+					<div class="col-md-6 col-sm-6 wow fadeInRight" data-wow-delay="0.5s">
+						<center><img class="ill_image" src="./static/images/disease_img/thediabete1.jpg"></center>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 col-sm-6 wow fadeInRight" data-wow-delay="0.5s">
+						<h4>Symptoms</h4>
+						<p>The symptoms of diabetes can differ based on the level of blood 
+							sugar elevation. It's common for individuals, particularly those 
+							with prediabetes or type 2 diabetes, to not exhibit symptoms at times. 
+							In contrast, symptoms in type 1 diabetes usually develop rapidly and 
+							are often more intense.
+							Common indicators for both type 1 and type 2 diabetes include:
+						</p>
+					    <ul>
+							<li>Experiencing heightened thirst and a significant increase in hunger</li>
+							<li>Needing to urinate more frequently than usual</li>
+							<li>Weight loss that cannot be explained</li>
+							<li>Detection of ketones in urine (ketones are produced when muscle and fat are broken down due to insufficient insulin)</li>
+							<li>Feeling unusually tired</li>
+							<li>Experiencing irritability</li>
+							<li>Having blurred vision</li>
+					    </ul>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-sm-6 wow fadeInRight" data-wow-delay="0.5s">
+						<h3>Model</h3>
+						<p>For the diagnostic process, please input the following details:</p>
+						<ul>
+							<li>Pregnancies: Number of times pregnant</li>
+							<li>Glucose: Plasma glucose concentration a 2 hours in an oral glucose tolerance test</li>
+							<li>BloodPressure: Diastolic blood pressure (mm Hg)</li>
+							<li>SkinThickness: Triceps skin fold thickness (mm)</li>
+							<li>Insulin: 2-Hour serum insulin (mu U/ml)</li>
+							<li>BMI: Body mass index (weight in kg/(height in m)^2)</li>
+							<li>Diabetes pedigree function: a function which scores likelihood of diabetes based on family history</li>
+							<li>Age (years)</li>
+
+
+						</ul>
+					</div>
+					
+					<div class="col-md-6 col-sm-6  wow fadeInRight" data-wow-delay="0.5s">
+						<div class="flex-wrapper">
+						  <div class="single-chart">
+						    <svg viewBox="0 0 36 36" class="circular-chart orange">
+						      <path class="circle-bg"
+						        d="M18 2.0845
+						          a 15.9155 15.9155 0 0 1 0 31.831
+						          a 15.9155 15.9155 0 0 1 0 -31.831"
+						      />
+						      <path class="circle"
+						        stroke-dasharray="86, 100"
+						        d="M18 2.0845
+						          a 15.9155 15.9155 0 0 1 0 31.831
+						          a 15.9155 15.9155 0 0 1 0 -31.831"
+						      />
+						      <text x="18" y="20.35" class="percentage">86%</text>
+						    </svg>
+						    <h4 style="text-align: center;">Accuracy</h4>
+						  </div>
+						  </div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			<br>
+			<br>
+			<br>
+			<div class="prediction text-center">
+			    <a href="/diabete_form" class="smoothScroll btn btn-success wow fadeInDown" data-wow-delay="2000">Predict Risk</a>
+		  	</div>
+			<br>
+		  	<br>
+		  	<br>
+		  	<br>
+
+		</div>
+		
+
+{% endblock %}
+
+
+
+

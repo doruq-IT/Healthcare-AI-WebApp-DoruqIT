@@ -1,0 +1,22 @@
+runtime: python310
+entrypoint: gunicorn -b :$PORT main:app
+
+env_variables:
+  DB_USER: "UserName"
+  DB_PASSWORD: "Password"
+  DB_NAME: "DatabaseName"
+  CLOUD_SQL_CONNECTION_NAME: "SQL_Connection_Name"
+
+instance_class: F4
+
+handlers:
+- url: /.*
+  script: auto
+  secure: always
+  redirect_http_response_code: 301
+
+automatic_scaling:
+  min_idle_instances: 1
+  max_idle_instances: 5
+  min_pending_latency: automatic
+  max_pending_latency: automatic
