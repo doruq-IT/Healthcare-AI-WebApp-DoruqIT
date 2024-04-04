@@ -1,4 +1,4 @@
-![DoruqHealthSystem MainPage](https://github.com/doruq-IT/Healthcare-AI-WebApp-DoruqIT/issues/1#issue-2226672340 "DoruqHealthSystem")
+![DoruqHealthSystem MainPage](https://github.com/doruq-IT/Healthcare-AI-WebApp-DoruqIT/issues/1#issue-2226672340 "DoruqHealthSystem Main Page")
 # DoruqHealthSystem
 Welcome to DoruqHealthSystem, an innovative web application at the intersection of healthcare and artificial intelligence. Designed to revolutionize the way we approach health diagnostics and consultations, our platform leverages the latest AI algorithms to provide precise disease predictions as well as a seamless Q&A module integrated with GPT-powered insights.
 
